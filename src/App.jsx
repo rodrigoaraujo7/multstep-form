@@ -1,8 +1,18 @@
-import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
+import { UserForm } from './components/ScreensForm/UserForm'
+import { ReviewForm } from './components/ScreensForm/ReviewForm'
+import { ThanksForm } from './components/ScreensForm/ThanksForm'
 
+import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
 import './App.css'
 
 export const App = () => {
+
+  const formComponents = [
+    <UserForm />,
+    <ReviewForm />,
+    <ThanksForm />
+  ]
+
   return (
     <div className="app">
       <div className="header">
@@ -12,6 +22,7 @@ export const App = () => {
       <div className="form-container">
         <p>steps</p>
         <form>
+          <div className="inputs-container"></div>
           <div className="actions">
             <button type='button'>
               <GrFormPrevious />
