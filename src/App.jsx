@@ -17,7 +17,7 @@ export const App = () => {
     <ThanksForm />
   ]
 
-  const {currentStep, currentComponent} = useForm(formComponents)
+  const {currentStep, currentComponent, changeStep} = useForm(formComponents)
 
   return (
     <div className="app">
@@ -27,10 +27,10 @@ export const App = () => {
       </div>
       <div className="form-container">
         <p>steps</p>
-        <form>
+        <form onSubmit={event => changeStep(currentStep + 1, event)}>
           <div className="inputs-container">{currentComponent}</div>
           <div className="actions">
-            <button type='button'>
+            <button type='button' onClick={() =>  changeStep(currentStep - 1)}>
               <GrFormPrevious />
               <span>Return</span>
             </button>
