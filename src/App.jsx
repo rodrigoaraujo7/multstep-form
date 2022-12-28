@@ -8,6 +8,7 @@ import { useForm } from './hooks/useForm'
 
 // utils
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
+import { FiSend } from 'react-icons/fi'
 import './App.css'
 
 export const App = () => {
@@ -17,7 +18,13 @@ export const App = () => {
     <ThanksForm />
   ]
 
-  const {currentStep, currentComponent, changeStep} = useForm(formComponents)
+  const {
+    currentStep, 
+    currentComponent, 
+    changeStep, 
+    isLastStep, 
+    isFirstStep
+  } = useForm(formComponents)
 
   return (
     <div className="app">
@@ -30,14 +37,24 @@ export const App = () => {
         <form onSubmit={event => changeStep(currentStep + 1, event)}>
           <div className="inputs-container">{currentComponent}</div>
           <div className="actions">
-            <button type='button' onClick={() =>  changeStep(currentStep - 1)}>
-              <GrFormPrevious />
-              <span>Return</span>
-            </button>
-            <button type='submit'>
-              <span>Next</span>
-              <GrFormNext />
-            </button>
+            {!isFirstStep && (
+              <button type='button' onClick={() =>  changeStep(currentStep - 1)}>
+                <GrFormPrevious />
+                <span>Return</span>
+              </button>
+            )}
+
+            {!isLastStep ? (
+              <button type='submit'>
+                <span>Next</span>
+                <GrFormNext />
+              </button>
+            ) : (
+              <button type='button'>
+                <span>Send</span>
+                <FiSend />
+              </button>
+            )}
           </div>
         </form>
       </div>
