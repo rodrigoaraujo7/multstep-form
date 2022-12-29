@@ -2,6 +2,7 @@
 import { UserForm } from './components/ScreensForm/UserForm'
 import { ReviewForm } from './components/ScreensForm/ReviewForm'
 import { ThanksForm } from './components/ScreensForm/ThanksForm'
+import { Steps } from './components/ScreensForm/Steps'
 
 // hooks
 import { useForm } from './hooks/useForm'
@@ -33,7 +34,7 @@ export const App = () => {
         <p>We happy with your order, use the under form to rate this product</p>
       </div>
       <div className="form-container">
-        <p>steps</p>
+        <Steps currentStep={currentStep} />
         <form onSubmit={event => changeStep(currentStep + 1, event)}>
           <div className="inputs-container">{currentComponent}</div>
           <div className="actions">
