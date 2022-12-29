@@ -7,7 +7,7 @@ import {
 
 import './Thanks.css'
 
-export const ThanksForm = () => {
+export const ThanksForm = ({ data }) => {
     return (
         <div className='thanks-container'>
             <h2>Wait a minute...</h2>
@@ -21,7 +21,7 @@ export const ThanksForm = () => {
                 <span>Product satisfaction</span>
             </p>
             <p className="review-data">
-                <span>Comments: </span>
+                <span>Comment: </span>
             </p>
         </div>
     )
