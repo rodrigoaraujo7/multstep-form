@@ -6,15 +6,15 @@ import './Steps.css'
 export const Steps = ({ currentStep }) => {
     return (
         <div className='steps'>
-            <div className="step">
+            <div className="step active">
                 <AiOutlineUser />
                 <p>Identify</p>
             </div>
-            <div className="step">
+            <div className={`step ${currentStep >= 1 ? 'active' : ''}`}>
                 <AiOutlineStar />
                 <p>Rating</p>
             </div>
-            <div className="step">
+            <div className={`step ${currentStep >= 2 ? 'active' : ''}`}>
                 <FiSend />
                 <p>Send Rate</p>
             </div>
