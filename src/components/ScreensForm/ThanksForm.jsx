@@ -7,6 +7,13 @@ import {
 
 import './Thanks.css'
 
+const emojiData = {
+    unsatisfied: <BsFillEmojiFrownFill />,
+    neutral: <BsFillEmojiNeutralFill />,
+    satisfied: <BsFillEmojiSmileFill />,
+    very_satisfied: <BsFillEmojiHeartEyesFill />
+}
+
 export const ThanksForm = ({ data }) => {
     return (
         <div className='thanks-container'>
@@ -16,12 +23,14 @@ export const ThanksForm = ({ data }) => {
                 receive a 10% discount coupon to you next buy
             </p>
             <p>To complete your review, click the submit button below </p>
-            <h3>Review Resume</h3>
+            <h3>Review Resume {data.name}</h3>
             <p className="review-data">
-                <span>Product satisfaction</span>
+                <span>Product satisfaction:</span>
+                {emojiData[data.review]}
             </p>
             <p className="review-data">
-                <span>Comment: </span>
+                <span>Comment:</span>
+                {data.comment}
             </p>
         </div>
     )
