@@ -1,12 +1,12 @@
-.form-control > .score-container {
+.form-control.score-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
     justify-content: center;
-    gap: 2rem;
+    gap: 2rem !important;
 }
 
 .score-container svg {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     cursor: pointer;
     transition: .3s;
 }
@@ -30,7 +30,7 @@
 .radio-container p {
     font-style: italic;
     font-weight: 300;
-    font-size: .7rem;
+    font-size: .85rem;
 
     margin-top: .4rem;
 }
